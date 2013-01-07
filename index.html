@@ -201,200 +201,239 @@
                       <img src="img/22.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>22 - Logic Outside of Rails</h4>
-                          <p>This is where my story begins. After going through a couple of tutorials I immediately started breaking out of Rails and putting
-                          my domain logic into Rails-independent service objects.</p>
+                          <p>This is where my story begins. After going through a couple of tutorials and placing most of the logic in models I soon started
+                            breaking out of Rails and puttig domain logic in Rails-independent service objects.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/23.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>23 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>23 - Domain Logic in Service</h4>
+                          <p>The controller looks very similar to the version where I had the logic in the model. Instead of calling the model, the controller
+                             sends a message to the service object.</p>
                       </div>
                   </div>
-                  <!--
                   <div class="item">
                       <img src="img/24.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>24 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>24 - Domain Logic in Service - Flogged</h4>
+                          <p>Once the logic was moved into the service, the model went back to its original size. The benefit I had with the Rails independent
+                          service object was the very fast feedback loop with my unit tests.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/25.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>25 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>25 - Logic in Service Object</h4>
+                          <p>This is how I initially developed my service objects. One main method was called from the controller, and that "organizer" method
+                            called other methods within the same object.<br>
+                            In the context of this example the controller called the "for_track" method which in turn called other methods on itself.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/26.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>26 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>26 - Testing is Easy. Or is it?</h4>
+                          <p>I broke some obvious OO principles when I kept my internal methods "public" for the sake of easier testing. However, when I refactored
+                             the service's internal structures, some of the unit tests broke. This did not work...</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/27.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>27 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>27 - How Will This Grow?</h4>
+                          <p>I made all the methods on the service object private except the "for_track" which was called by controller. This led to increadibly
+                             complex test setups. As I added more logic, the tests became even more brittle.<br>
+                             Listening to my tests it became pretty clear that this will not work in the fututre.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/28.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>28 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>28 - Naming My Services</h4>
+                          <p>Take a look at how I name my services. I don't use nouns, I name them with verbs. They mean actions to me. <br>When I see a class named
+                            "BuildsCategory" I know exactly what this class should do. It's not for parsing the feed or the recorded at value. It forces me
+                            to keep the object's single responsibility.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/29.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>29 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>29 - Execution In the Kingdom of Nouns</h4>
+                          <p>I attended CodeRetreat in Cleveland right after CodeMash last year. Corey Haines mentioned <a href="http://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html" target="_blank">this blog post</a> which is an amazing
+                            writing. Do yourself a favor and read it! You will name your classes differently.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/30.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>30 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>30 - Players in Services</h4>
+                          <p>It was obvious the design of my service object was sub-par. Testing of it was very difficult, I violated SRP all over my object. I had the find
+                             a much cleaner organization of my code. Two types of objects emerged: the single organizer object and the small action objects.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/31.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>31 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>31 - Organizer Object Tells the Story</h4>
+                          <p>I enjoy the kind of code that reads like a chapter from a book. I fell in love wit the readability of RSpec and the Ruby language itself.<br>
+                            Most of the things we do are a series of tasks. The parsing logic I used in my example has several steps: it splits the feed to parts,
+                            it parses out the recorded at date, validates the remainder of the feed, etc.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/32.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>32 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>32 - Organizer Object Dressed Up</h4>
+                          <p>I wanted to preserve the readability of the tasks in the organizer object in the form of actions.. The organizer calls them in order by iterating
+                          over them one by one.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/33.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>33 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>33 - The Actions</h4>
+                          <p>What are the actions? They are the atomic building blocks of the domain logic workflow. The organizer object calls them in order and they
+                            are unaware of each other's existance.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/34.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>34 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>34 - Once Upon a Time...</h4>
+                          <p>In my Java days I really liked the <a href="http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern" target="_blank">Chain of Responsibility</a>
+                            pattern that I used to brake up complex workflows into simple, single responsible actions.<br>
+                          </p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/35.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>35 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>35 - Series of Actions</h4>
+                          <p>Using the Chain of Responsibility made sense in a staticly typed language like Java, but it was just too much of a ceremony in Ruby.
+                            Influenced by this Gof4 Pattern I came up with a slight variation of it: The Series of Actions. Instead of actions calling the next one
+                            in the chain I let the organizer set up the order and call them one by one.
+                          </p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/36.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>36 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>36 - An Action</h4>
+                          <p>My goal was to keep the actions as simple as possible. <br>
+                            Consider it as a black box: you put some stuff in it, it does it's magic and it either either alters an object already in the context or
+                            adds a new one in.
+                          </p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/37.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>37 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>37 - Domain Logic in Series of Actions - Flogged</h4>
+                          <p>Now the total Flog value went up for the service objects after refactoring them into Series of Actions. However, and this is important,
+                          the Flog class average went down significanlty. It's a lot easier to understand a class with 13 Flog value than one with around 80.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/38.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>38 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>38 - What So Functional About This?</h4>
+                          <p>Well, I am not newing up objects with instance variables and other instance methods. I don't maintain state in the class object.<br>
+                          I am basically building up the domain logic from small functions wrapped into class object methods.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/39.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>39 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>39 - Data is Transferred Through Context</h4>
+                          <p>The actions are working on the data provided to them. The data carrier, or context is a special kind of hash. A key-value pair with
+                            behavior added to it.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/40.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>40 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>40 - Context in the Organizer Object</h4>
+                          <p>The organizer object initializes the Context. It passes this context to the actions when it iterates through them.<br>
+                             At the very end this context object is returned to the controller filled with all data it needs.
+                          </p>
+
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/41.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>41 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>41 - Context in Actions</h4>
+                          <p>The actions know how to pull data from the context. It has to have an item in order to execute the action successfully.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/42.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>42 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>42 - Error in Action</h4>
+                          <p>And when an error occurs it sets the action pushed the context into a failure state.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/43.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>43 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>43 - Halting Execution</h4>
+                          <p>The actions are guarding themselves against a context which is a failed state. In case the second action fails, the third
+                             and fourth actions will not be executed.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/44.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>44 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>44 - Meet Light Service</h4>
+                          <p>As I went from one job to the other and I used the same ideas in different Rails projects, I ended up copying files a lot.
+                            Eventually I gathered all the functionalities I needed and released a gem that I named Light Service.<br>
+                            The whole gem right now has only two classes. That's it. I want to keep this as "light" as possible.
+                          </p>
                       </div>
                   </div>
+                  <!--
                   <div class="item">
                       <img src="img/45.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>45 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>45 - Action's Execute Method</h4>
+                          <p>I realized all the actions were doing the same thing.</p>
                       </div>
                   </div>
+                  -->
                   <div class="item">
                       <img src="img/46.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>46 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>46 - Execute Method in Actions</h4>
+                          <p>I realized all my actions were doing the same thing: guarding execution from the context in failure state and returning the 
+                          context object at the very end of the method.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/47.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>47 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>47 - Executed Light Service Macro</h4>
+                          <p>With <a href="https://github.com/adomokos/light-service" target="_blank">Light Service</a> you have a macro that does the same thing.
+                            It creates a method for you with the name "execute", it guards the execution and returns the context. You just don't have to
+                            write it for every single action. It essentially creates the method for you.
+                          </p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/48.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>48 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>48 - To Get Light Service</h4>
+                          <p>Either add it to your gemfile or install it through rubygems.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/49.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>49 - Thumbnail label</h4>
+                          <h4>49 - Growing Software</h4>
                           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                       </div>
                   </div>
+                  <!--
                   <div class="item">
                       <img src="img/50.jpg" alt="" />
                       <div class="carousel-caption">
