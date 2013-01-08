@@ -202,7 +202,7 @@
                       <div class="carousel-caption">
                           <h4>22 - Logic Outside of Rails</h4>
                           <p>This is where my story begins. After going through a couple of tutorials and placing most of the logic in models I soon started
-                            breaking out of Rails and puttig domain logic in Rails-independent service objects.</p>
+                            breaking out of Rails and putting domain logic in Rails-independent service objects.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -242,9 +242,9 @@
                       <img src="img/27.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>27 - How Will This Grow?</h4>
-                          <p>I made all the methods on the service object private except the "for_track" which was called by controller. This led to increadibly
+                          <p>I made all the methods on the service object private except the "for_track" which was called by controller. This led to incredibly
                              complex test setups. As I added more logic, the tests became even more brittle.<br>
-                             Listening to my tests it became pretty clear that this will not work in the fututre.</p>
+                             Listening to my tests it became pretty clear that this will not work in the future.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -294,7 +294,7 @@
                       <div class="carousel-caption">
                           <h4>33 - The Actions</h4>
                           <p>What are the actions? They are the atomic building blocks of the domain logic workflow. The organizer object calls them in order and they
-                            are unaware of each other's existance.</p>
+                            are unaware of each other's existence.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -310,7 +310,7 @@
                       <img src="img/35.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>35 - Series of Actions</h4>
-                          <p>Using the Chain of Responsibility made sense in a staticly typed language like Java, but it was just too much of a ceremony in Ruby.
+                          <p>Using the Chain of Responsibility made sense in a statically typed language like Java, but it was just too much of a ceremony in Ruby.
                             Influenced by this Gof4 Pattern I came up with a slight variation of it: The Series of Actions. Instead of actions calling the next one
                             in the chain I let the organizer set up the order and call them one by one.
                           </p>
@@ -331,7 +331,7 @@
                       <div class="carousel-caption">
                           <h4>37 - Domain Logic in Series of Actions - Flogged</h4>
                           <p>Now the total Flog value went up for the service objects after refactoring them into Series of Actions. However, and this is important,
-                          the Flog class average went down significanlty. It's a lot easier to understand a class with 13 Flog value than one with around 80.</p>
+                          the Flog class average went down significantly. It's a lot easier to understand a class with 13 Flog value than one with around 80.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -507,7 +507,7 @@
       <script src="js/bootstrap.js"></script>
       <script type="text/javascript">
         $(document).ready(function() {
-          $('#myCarousel').carousel('pause');
+            $('#myCarousel').carousel('pause');
         });
       </script>
   </body>
