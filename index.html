@@ -36,7 +36,7 @@
                       <img src="img/2.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>2 - Outline</h4>
-                          <p>I am not going to talk about functional programming. I am not going to try bending the Ruby language to be a functional one, either.
+                          <p>I am not going to teach functional programming. I am not going to try bending the Ruby language to be a functional one, either.
                             Hopefully I'll show you refactored and elegant Ruby code. So if you're ready, let's roll.</p>
                       </div>
                   </div>
@@ -121,7 +121,7 @@
                           <h4>12 - The FLOG Gem</h4>
                           <p>I wanted to find a tool that measures code complexity. The best one out there is the FLOG gem. Understanding the result is simple:
                             "The higher score the harder it is to test the code". It uses ABC metrics: assignments, branching and calls.<br>
-                            I analyzed that model you saw on the previous slide: it has a total flog value of 2592!</p>
+                            I analyzed that model you saw in the previous slide: it has a total flog value of 2592!</p>
                       </div>
                   </div>
                   <div class="item">
@@ -130,7 +130,7 @@
                           <h4>13 - The Example</h4>
                           <p>I've worked on many Rails app in the last couple of years. I wanted to use an example to show you the different ideas I've tried.
                             The is a tracking app, where you can provide all the data in one text and the system parses it out into category and track records.
-                            It will also check if the category already exists and will use that to file the track record.<br>
+                            It will also check if the category already exists and will use that to file that track.<br>
                             You can optionally provide the date in the front in case you want to use date other than today's date.</p>
                       </div>
                   </div>
@@ -145,7 +145,7 @@
                       <img src="img/15.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>15 -  Domain Logic in Controller Action</h4>
-                          <p>Using my example, I put all the parsing logic in the controller action. The action has 48 lines of code, which is not bad considering
+                          <p>Using my example app, I put all the parsing logic in the controller action. The action has 48 lines of code, which is not bad considering
                             what we all did a decade ago: all logic went in the views. Do you remember those good old ASP days?<br>But seriously: 48 lines of domain logic
                             in the controller?! Yeah: WTF.</p>
                       </div>
@@ -154,7 +154,7 @@
                       <img src="img/16.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>16 - Domain Logic in Controller Action - Flogged</h4>
-                          <p>I am comparing the TracksController and Track model. The Track model has already some logic around displaying dynamic properties.
+                          <p>I am comparing the TracksController and Track model with Flog. The Track model has already some logic around displaying dynamic properties.
                           But the action has a Flog value of 46.2.</p>
                       </div>
                   </div>
@@ -194,8 +194,8 @@
                       <img src="img/21.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>21 - Domain Logic in Model - Flogged</h4>
-                          <p>The Flog change between the controller and model clearly shows that I only moved methods around. All the parsing logic is now in the 
-                          model.</p>
+                          <p>The Flog change between the controller and model clearly shows that I only moved methods around. All the parsing logic is unchanged and
+                            is now in the model.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -203,7 +203,8 @@
                       <div class="carousel-caption">
                           <h4>22 - Logic Outside of Rails</h4>
                           <p>This is where my story begins. After going through a couple of tutorials and placing most of the logic in models I soon started
-                            breaking out of Rails and putting domain logic in Rails-independent service objects.</p>
+                            breaking out of Rails and putting domain logic in Rails-independent service objects.<br>The benefits to me was huge: running specs
+                            in sub-seconds instead of 23 seconds.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -218,8 +219,7 @@
                       <img src="img/24.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>24 - Domain Logic in Service - Flogged</h4>
-                          <p>Once the logic was moved into the service, the model went back to its original size. The benefit I had with the Rails independent
-                          service object was the very fast feedback loop with my unit tests.</p>
+                          <p>Once the logic was moved into the service, the model's Flog value  went back to its original size.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -286,7 +286,7 @@
                       <img src="img/32.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>32 - Organizer Object Dressed Up</h4>
-                          <p>I wanted to preserve the readability of the tasks in the organizer object in the form of actions.. The organizer calls them in order by iterating
+                          <p>I wanted to preserve the readability of the tasks in the organizer object for the actions. The organizer calls them in order by iterating
                           over them one by one.</p>
                       </div>
                   </div>
@@ -302,8 +302,8 @@
                       <img src="img/34.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>34 - Once Upon a Time...</h4>
-                          <p>In my Java days I really liked the <a href="http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern" target="_blank">Chain of Responsibility</a>
-                            pattern that I used to brake up complex workflows into simple, single responsible actions.<br>
+                          <p>In my Java days I used the <a href="http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern" target="_blank">Chain of Responsibility</a>
+                            pattern to brake up complex workflows into simple, single responsible actions.<br>
                           </p>
                       </div>
                   </div>
@@ -311,7 +311,7 @@
                       <img src="img/35.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>35 - Series of Actions</h4>
-                          <p>Using the Chain of Responsibility made sense in a statically typed language like Java, but it was just too much of a ceremony in Ruby.
+                          <p>Using the Chain of Responsibility made sense in a statically typed language like Java, but it was just too big of a ceremony in Ruby.
                             Influenced by this Gof4 Pattern I came up with a slight variation of it: The Series of Actions. Instead of actions calling the next one
                             in the chain I let the organizer set up the order and call them one by one.
                           </p>
@@ -332,7 +332,7 @@
                       <div class="carousel-caption">
                           <h4>37 - Domain Logic in Series of Actions - Flogged</h4>
                           <p>Now the total Flog value went up for the service objects after refactoring them into Series of Actions. However, and this is important,
-                          the Flog class average went down significantly. It's a lot easier to understand a class with 13 Flog value than one with around 80.</p>
+                          the Flog class average went down significantly. It's a lot easier to understand a class with 13 Flog value than one with around 80 or 2500.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -356,7 +356,7 @@
                       <div class="carousel-caption">
                           <h4>40 - Context in the Organizer Object</h4>
                           <p>The organizer object initializes the Context. It passes this context to the actions when it iterates through them.<br>
-                             At the very end this context object is returned to the controller filled with all data it needs.
+                             At the very end this context object is returned to the controller filled with all the data it needs.
                           </p>
 
                       </div>
@@ -372,7 +372,7 @@
                       <img src="img/42.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>42 - Error in Action</h4>
-                          <p>And when an error occurs it sets the action pushed the context into a failure state.</p>
+                          <p>And when an error occurs it pushes the context into a failure state.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -431,70 +431,113 @@
                       <img src="img/49.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>49 - Growing Software</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <p>Your customers are going to ask for changes or new features in the software. The question is: where will you put those changes?</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/50.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>50 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>50 - 1X Complexity</h4>
+                          <p>I compared two solutions: the one where the logic is in the controller and the one where I use the series of actions. This is our
+                             initial state.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/51.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>51 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>51 - 2X Complexity</h4>
+                          <p>And I doubled the code in the controller by copying the methods and appending 1 to the method names, so there was a "builds_category"
+                            "builds_cateogory1" methods. I also doubled my action classes in the services as well.<br>
+                            Although the Flog total is slightly higher in the services, the Flog class average remained around 13.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/52.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>52 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>52 - 3X Complexity</h4>
+                          <p>Just to see the trend better, I tripled both the controller code and the number of classes I had in the services. What's really interesting
+                            is that the Flog class average remained almost unchanged.<br>
+                            If I keep doing this I am sure I can reach 2500 Flog points in the controller and the Flog class average will remain around 13.<br>
+                            We will always understand a class with the Flog value of 13.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/53.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>53 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>53 - Trending</h4>
+                          <p>To visualize my experiment I came up with this graph. While the complexity grew with O(n) in the controller the Series of Actions remained
+                            static with O(1).</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/54.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>54 - Thumbnail label</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>54 - Word of Warning</h4>
+                          <p>Don't do this every time! Use Rails what it's good at and don't introduce additional complexity to it.<br>
+                            I was asked when I would build out series of actions: well, I might put a conditional in the controller action,
+                            but once the code gets more complex I break it out into services and test drive the logic there.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/55.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>55 - Summary</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>55 - Finding My Code</h4>
+                          <p>The biggest benefit for me for using the series of actions is locating my code. I don't have to hunt down logic in Active Record callbacks
+                             or mixed-in concerns, I can follow the trail right from the controller.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/56.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>56 - Social Links</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>56 - Looking at the Controller First</h4>
+                          <p>Let's say I have to change the way a new category is being initialized. I have not worked on this app for a couple of months, so my
+                             memory is a bit hazy and I need to find that code. First I look at the controller action and I see which organizer object is called.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/57.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>57 - Thank You</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>57 - Finding the Action in the Organizer</h4>
+                          <p>I locate the organizer object, where the series of actions I mapped out clearly. I see that the Category has to be initialized in the
+                             the BuildsCategoryAction, so I open that file.</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/58.jpg" alt="" />
                       <div class="carousel-caption">
-                          <h4>58 - Q and A</h4>
-                          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                          <h4>58 - Locating the Action with Logic</h4>
+                          <p>And Voila! I am there. I don't need to jump into the debugger or fire up Rails console. I can just follow the trail right from the code.</p>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <img src="img/59.jpg" alt="" />
+                      <div class="carousel-caption">
+                          <h4>59 - Summary</h4>
+                          <p>And to sum this all up: get out of the framework as complexity arises. Elegant code should tell you a story. Don't use state if you don't 
+                            have to, it increases complexity. Separate behavior from data, it let's you follow SRP. Introduce new classes or new actions instead of adding 
+                            new method to a model or a service.
+                            </p>
+                          <p>And most importantly: make your code simple!</p>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <img src="img/60.jpg" alt="" />
+                      <div class="carousel-caption">
+                          <h4>60 - Social Links</h4>
+                          <p>You can get in touch with me through my social links.</p>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <img src="img/61.jpg" alt="" />
+                      <div class="carousel-caption">
+                          <h4>61 - Thank You</h4>
+                          <p>And thank you for your attention!</p>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <img src="img/62.jpg" alt="" />
+                      <div class="carousel-caption">
+                          <h4>62 - Q and A</h4>
                       </div>
                   </div>
               </div>
