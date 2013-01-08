@@ -36,7 +36,7 @@
                       <img src="img/2.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>2 - Outline</h4>
-                          <p>I am not going to teach functional programming. I am not going to try bending the Ruby language to be a functional one, either.
+                          <p>I am not going to teach you functional programming. I am not going to try bending the Ruby language to be a functional one, either.
                             Hopefully I'll show you refactored and elegant Ruby code. So if you're ready, let's roll.</p>
                       </div>
                   </div>
@@ -45,14 +45,15 @@
                       <div class="carousel-caption">
                           <h4>3 - The Work You Do</h4>
                           <p>I have a 25 minutes commute to work and I listen to audio books while I drive. A friend recommended reading the book: "The EMyth Revisited".
-                            And this sentence got stuck in my brain. Translated to our profession, we could say: "The kind of code you write is a reflection of who YOU ARE."</p>
+                            The sentence "the work you do is a reflection of who are" got stuck in my brain.<br>
+                            Translated to our profession, we could say: "The kind of code you write is a reflection of who YOU ARE."</p>
                       </div>
                   </div>
                   <div class="item">
                       <img src="img/4.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>4 - Roads</h4>
-                          <p>I am obsessed with the quality of roads. Unfortunately, in Northeast Ohio the roads are in really bad shape. You could blame it
+                          <p>I am obsessed with the quality of roads. Unfortunately, in Northeast Ohio the roads are in really bad shape. We blame it
                             on the weather, but I think the quality of work has a part to it, too. This pothole took more than a couple of weeks to grow this big.
                           </p>
                       </div>
@@ -236,7 +237,7 @@
                       <div class="carousel-caption">
                           <h4>26 - Testing is Easy. Or is it?</h4>
                           <p>I broke some obvious OO principles when I kept my internal methods "public" for the sake of easier testing. However, when I refactored
-                             the service's internal structures, some of the unit tests broke. This did not work...</p>
+                             the service's internal structure, some of the unit tests broke. This did not work...</p>
                       </div>
                   </div>
                   <div class="item">
@@ -269,7 +270,7 @@
                       <img src="img/30.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>30 - Players in Services</h4>
-                          <p>It was obvious the design of my service object was sub-par. Testing of it was very difficult, I violated SRP all over my object. I had the find
+                          <p>It was obvious the design of my service object was sub-par. Testing of it was very difficult, I violated SRP all over my object. I had to find
                              a much cleaner organization of my code. Two types of objects emerged: the single organizer object and the small action objects.</p>
                       </div>
                   </div>
@@ -322,7 +323,7 @@
                       <div class="carousel-caption">
                           <h4>36 - An Action</h4>
                           <p>My goal was to keep the actions as simple as possible. <br>
-                            Consider it as a black box: you put some stuff in it, it does it's magic and it either either alters an object already in the context or
+                            Consider it as a black box: you put some stuff in it, it does its magic and it either alters an object already in the context or
                             adds a new one in.
                           </p>
                       </div>
@@ -414,9 +415,9 @@
                       <img src="img/47.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>47 - Executed Light Service Macro</h4>
-                          <p>With <a href="https://github.com/adomokos/light-service" target="_blank">Light Service</a> you have a macro that does the same thing.
-                            It creates a method for you with the name "execute", it guards the execution and returns the context. You just don't have to
-                            write it for every single action. It essentially creates the method for you.
+                          <p>With <a href="https://github.com/adomokos/light-service" target="_blank">Light Service</a> you don't have to remember adding
+                            the guard condition and the return statement.
+                            It creates a method for you with the name "execute" which does it for you.
                           </p>
                       </div>
                   </div>
@@ -438,7 +439,7 @@
                       <img src="img/50.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>50 - 1X Complexity</h4>
-                          <p>I compared two solutions: the one where the logic is in the controller and the one where I use the series of actions. This is our
+                          <p>I compared two solutions: the one where the logic is in the controller and the one where I use the Series of Actions. This is our
                              initial state.</p>
                       </div>
                   </div>
@@ -446,8 +447,8 @@
                       <img src="img/51.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>51 - 2X Complexity</h4>
-                          <p>And I doubled the code in the controller by copying the methods and appending 1 to the method names, so there was a "builds_category"
-                            "builds_cateogory1" methods. I also doubled my action classes in the services as well.<br>
+                          <p>And I doubled the code in the controller by copying the methods and appending 1 to the method names, so now there is a "builds_category"
+                            and a "builds_cateogory1" method. I also doubled my action classes in the services as well.<br>
                             Although the Flog total is slightly higher in the services, the Flog class average remained around 13.</p>
                       </div>
                   </div>
@@ -455,7 +456,7 @@
                       <img src="img/52.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>52 - 3X Complexity</h4>
-                          <p>Just to see the trend better, I tripled both the controller code and the number of classes I had in the services. What's really interesting
+                          <p>Just to see the trend clearer, I tripled both the controller code and the number of classes I had in the services. What's really interesting
                             is that the Flog class average remained almost unchanged.<br>
                             If I keep doing this I am sure I can reach 2500 Flog points in the controller and the Flog class average will remain around 13.<br>
                             We will always understand a class with the Flog value of 13.</p>
@@ -474,7 +475,7 @@
                       <div class="carousel-caption">
                           <h4>54 - Word of Warning</h4>
                           <p>Don't do this every time! Use Rails what it's good at and don't introduce additional complexity to it.<br>
-                            I was asked when I would build out series of actions: well, I might put a conditional in the controller action,
+                            I was asked when I would build out Series of Actions: well, I might put a conditional in the controller action,
                             but once the code gets more complex I break it out into services and test drive the logic there.</p>
                       </div>
                   </div>
@@ -482,7 +483,7 @@
                       <img src="img/55.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>55 - Finding My Code</h4>
-                          <p>The biggest benefit for me for using the series of actions is locating my code. I don't have to hunt down logic in Active Record callbacks
+                          <p>The biggest benefit for me for using the Series of Actions is locating my code. I don't have to hunt down logic in Active Record callbacks
                              or mixed-in concerns, I can follow the trail right from the controller.</p>
                       </div>
                   </div>
@@ -498,7 +499,7 @@
                       <img src="img/57.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>57 - Finding the Action in the Organizer</h4>
-                          <p>I locate the organizer object, where the series of actions I mapped out clearly. I see that the Category has to be initialized in the
+                          <p>I locate the organizer object, where the Series of Actions are mapped out clearly. I see that the Category has to be initialized in the
                              the BuildsCategoryAction, so I open that file.</p>
                       </div>
                   </div>
@@ -515,7 +516,7 @@
                           <h4>59 - Summary</h4>
                           <p>And to sum this all up: get out of the framework as complexity arises. Elegant code should tell you a story. Don't use state if you don't 
                             have to, it increases complexity. Separate behavior from data, it let's you follow SRP. Introduce new classes or new actions instead of adding 
-                            new method to a model or a service.
+                            new methods to a model or a service.
                             </p>
                           <p>And most importantly: make your code simple!</p>
                       </div>
