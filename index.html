@@ -130,9 +130,9 @@
                       <div class="carousel-caption">
                           <h4>13 - The Example</h4>
                           <p>I've worked on many Rails app in the last couple of years. I wanted to use an example to show you the different ideas I've tried.
-                            The is a tracking app, where you can provide all the data in one text and the system parses it out into category and track records.
+                            This is a tracking app, where you can provide all the data in one text and the system parses it out into category and track records.
                             It will also check if the category already exists and will use that to file that track.<br>
-                            You can optionally provide the date in the front in case you want to use date other than today's date.</p>
+                            You can optionally prepend the date in the front in case you want to use a date other than today's date.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -204,8 +204,8 @@
                       <div class="carousel-caption">
                           <h4>22 - Logic Outside of Rails</h4>
                           <p>This is where my story begins. After going through a couple of tutorials and placing most of the logic in models I soon started
-                            breaking out of Rails and putting domain logic in Rails-independent service objects.<br>The benefits to me was huge: running specs
-                            in sub-seconds instead of 23 seconds.</p>
+                            breaking out of Rails and putting domain logic in Rails-independent service objects.<br>The benefits to me was huge: I was able to run
+                            my specs under sub-seconds instead of 23 seconds.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -229,7 +229,7 @@
                           <h4>25 - Logic in Service Object</h4>
                           <p>This is how I initially developed my service objects. One main method was called from the controller, and that "organizer" method
                             called other methods within the same object.<br>
-                            In the context of this example the controller called the "for_track" method which in turn called other methods on itself.</p>
+                            In the context of this example the controller called the "for_track" main method on this service object.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -244,7 +244,7 @@
                       <img src="img/27.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>27 - How Will This Grow?</h4>
-                          <p>I made all the methods on the service object private except the "for_track" which was called by controller. This led to incredibly
+                          <p>I made all the methods on the service object private except the "for_track" which was called by the controller. This led to incredibly
                              complex test setups. As I added more logic, the tests became even more brittle.<br>
                              Listening to my tests it became pretty clear that this will not work in the future.</p>
                       </div>
@@ -313,7 +313,7 @@
                       <div class="carousel-caption">
                           <h4>35 - Series of Actions</h4>
                           <p>Using the Chain of Responsibility made sense in a statically typed language like Java, but it was just too big of a ceremony in Ruby.
-                            Influenced by this Gof4 Pattern I came up with a slight variation of it: The Series of Actions. Instead of actions calling the next one
+                            Influenced by this Gof4 pattern I came up with a slight variation of it: The Series of Actions. Instead of actions calling the next one
                             in the chain I let the organizer set up the order and call them one by one.
                           </p>
                       </div>
@@ -356,7 +356,7 @@
                       <img src="img/40.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>40 - Context in the Organizer Object</h4>
-                          <p>The organizer object initializes the Context. It passes this context to the actions when it iterates through them.<br>
+                          <p>The organizer object initializes the context. It's being passed to the actions when the organizer iterates through them.<br>
                              At the very end this context object is returned to the controller filled with all the data it needs.
                           </p>
 
