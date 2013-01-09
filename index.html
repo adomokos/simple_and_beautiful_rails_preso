@@ -121,7 +121,7 @@
                       <div class="carousel-caption">
                           <h4>12 - The FLOG Gem</h4>
                           <p>I wanted to find a tool that measures code complexity. The best one out there is the FLOG gem. Understanding the result is simple:
-                            "The higher score the harder it is to test the code". It uses ABC metrics: assignments, branching and calls.<br>
+                            "The higher the score the harder it is to test the code". It uses ABC metrics: assignments, branching and calls.<br>
                             I analyzed that model you saw in the previous slide: it has a total flog value of 2592!</p>
                       </div>
                   </div>
@@ -139,7 +139,7 @@
                       <img src="img/14.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>14 - Domain Logic in Controllers</h4>
-                          <p>Early on, we all put our domain logic in the controller.</p>
+                          <p>Early on, we put most of our domain logic in the controller.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -163,7 +163,7 @@
                       <img src="img/17.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>17 - Domain Logic in Controller</h4>
-                          <p>Having all logic in 1 method is bad. After extracting a couple of methods the controller is a bit easier to read, but I think this code is still
+                          <p>Having all logic in one method is bad. After extracting a couple of methods the controller is a bit easier to read, but I think this code is still
                           a mess. At least the total LOC for this action went down from 48 to 25.</p>
                       </div>
                   </div>
@@ -380,7 +380,7 @@
                       <img src="img/43.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>43 - Halting Execution</h4>
-                          <p>The actions are guarding themselves against a context which is a failed state. In case the second action fails, the third
+                          <p>The actions are guarding themselves against a context which is in a failed state. In case the second action fails, the third
                              and fourth actions will not be executed.</p>
                       </div>
                   </div>
