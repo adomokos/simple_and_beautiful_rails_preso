@@ -129,7 +129,8 @@
                       <img src="img/13.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>13 - The Example</h4>
-                          <p>I've worked on many Rails app in the last couple of years. I wanted to use an example to show you the different ideas I've tried.
+                          <p>I've worked on many Rails app in the last couple of years. The ideas I am talking about in this presentation emerged while
+                            working on those apps. I wanted to use one example to show you the different solutions I've tried.<br>
                             This is a tracking app, where you can provide all the data in one text and the system parses it out into category and track records.
                             It will also check if the category already exists and will use that to file that track.<br>
                             You can optionally prepend the date in the front in case you want to use a date other than today's date.</p>
@@ -204,7 +205,7 @@
                       <div class="carousel-caption">
                           <h4>22 - Logic Outside of Rails</h4>
                           <p>This is where my story begins. After going through a couple of tutorials and placing most of the logic in models I soon started
-                            breaking out of Rails and putting domain logic in Rails-independent service objects.<br>The benefits to me was huge: I was able to run
+                            breaking out of Rails and putting domain logic in Rails-independent service objects.<br>The benefits to me were huge: I was able to run
                             my specs under sub-seconds instead of 23 seconds.</p>
                       </div>
                   </div>
@@ -296,7 +297,7 @@
                       <img src="img/33.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>33 - Organizer Object Dressed Up</h4>
-                          <p>I wanted to preserve the readability of the tasks in the organizer object for the actions. The organizer calls them in order by iterating
+                          <p>I wanted to preserve the readability of the tasks in the organizer object. The organizer calls the actions in order by iterating
                           over them one by one.</p>
                       </div>
                   </div>
@@ -304,8 +305,8 @@
                       <img src="img/34.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>34 - The Actions</h4>
-                          <p>What are the actions? They are the atomic building blocks of the domain logic workflow. The organizer object calls them in order and they
-                            are unaware of each other's existence.</p>
+                          <p>What are the actions? They are the atomic building blocks of the domain logic workflow. They are unaware of each other's existence.<br>
+                          The organizer invokes them by providing the data in a special kind of context.</p>
                       </div>
                   </div>
                   <div class="item">
@@ -458,7 +459,7 @@
                           <h4>52 - 3X Complexity</h4>
                           <p>Just to see the trend clearer, I tripled both the controller code and the number of classes I had in the services. What's really interesting
                             is that the Flog class average remained almost unchanged.<br>
-                            If I keep doing this I am sure I can reach 2500 Flog points in the controller and the Flog class average will remain around 13.<br>
+                            If I keep doing this I am sure I can reach 2500 Flog points in the controller and the Flog class average for action classes will remain around 13.<br>
                             We will always understand a class with the Flog value of 13.</p>
                       </div>
                   </div>
@@ -474,7 +475,7 @@
                       <img src="img/54.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>54 - Word of Warning</h4>
-                          <p>Don't do this every time! Use Rails what it's good at and don't introduce additional complexity to it.<br>
+                          <p>Don't do this every time! Take advantage of Rails, don't introduce additional complexity to it.<br>
                             I was asked when I would build out Series of Actions: well, I might put a conditional in the controller action,
                             but once the code gets more complex I break it out into services and test drive the logic there.</p>
                       </div>
@@ -483,7 +484,7 @@
                       <img src="img/55.jpg" alt="" />
                       <div class="carousel-caption">
                           <h4>55 - Finding My Code</h4>
-                          <p>The biggest benefit for me for using the Series of Actions is locating my code. I don't have to hunt down logic in Active Record callbacks
+                          <p>The biggest benefit for me for using the Series of Actions is locating code. I don't have to hunt down logic in Active Record callbacks
                              or mixed-in concerns, I can follow the trail right from the controller.</p>
                       </div>
                   </div>
